@@ -59,11 +59,12 @@
 			}
 		});
 
-		setInterval(playNext, 2000, 1);
+		//setInterval(playNext, 2000, 1);
 
 		function playNext(len) {
 			if(!isPlay) {
 				isPlay = true;
+				$carousel.fadeTo(500, 0);
 				pageIndex += len;
 				$imgCt.animate({
 					left: '-=' + imgWidth
@@ -74,9 +75,11 @@
 						});
 						pageIndex = 0;
 					}
+
 					setBullets();
 					isPlay = false;
 				});
+				$carousel.fadeTo(500, 1);
 			}
 
 		}
@@ -84,6 +87,7 @@
 		function playPrev(len) {
 			if(!isPlay) {
 				isPlay = true;
+				$carousel.fadeTo(500, 0);
 				pageIndex -= len;
 				$imgCt.animate({
 					left: '+=' + imgWidth
@@ -97,6 +101,7 @@
 					setBullets();
 					isPlay = false;
 				})
+				$carousel.fadeTo(500, 1);
 			}
 		}
 
